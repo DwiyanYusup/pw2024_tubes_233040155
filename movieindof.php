@@ -186,32 +186,32 @@ function registrasi($data)
 {
     global $db;
 
-
     $username = strtolower(stripslashes($data["username"]));
     $password = mysqli_real_escape_string($db, $data["password"]);
     $password2 = mysqli_real_escape_string($db, $data["password2"]);
+    $role = 'user';
 
-
-    // cek username sudah ada apa belum
+    // Check if username already exists
     $result = mysqli_query($db, "SELECT username FROM user WHERE username = '$username'");
     if (mysqli_fetch_assoc($result)) {
         echo "<script>
-                alert('username sudah digunakan!')
+                alert('Username sudah digunakan!');
             </script>";
         return false;
     }
-    // cek konfirmasi
+
+    // Check password confirmation
     if ($password !== $password2) {
         echo "<script>
-                alert('konfirmasi password tidak sesuai!'); 
+                alert('Konfirmasi password tidak sesuai!'); 
                 </script>";
         return false;
     }
 
-    // enkripsi password
+    // Encrypt password
     $password = password_hash($password, PASSWORD_DEFAULT);
 
-    // tambahkan userbaru ke data base
-    mysqli_query($db, "INSERT INTO user VALUES(NULL, '$username', '$password')");
+    // Add new user to the database
+    mysqli_query($db, "INSERT INTO user (username, password, role) VALUES('$username', '$password', '$role')");
     return mysqli_affected_rows($db);
 }
