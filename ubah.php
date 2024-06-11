@@ -41,11 +41,11 @@ if (isset($_POST["ubah"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ubah Film</title>
+    <title>Ubah Film/Anime</title>
 </head>
 
 <body>
-    <h1>Ubah Film</h1>
+    <h1>Ubah Film/Anime</h1>
 
     <form action="" method="post" enctype="multipart/form-data">
         <input type="hidden" name="movie_id" value="<?= $movie["movie_id"]; ?>">
@@ -73,7 +73,7 @@ if (isset($_POST["ubah"])) {
                 <input type="text" name="director" id="director" required value=" <?= $movie["director"]; ?>">
             </li>
             <li>
-                <label for="description">Deskripsi: </label>
+                <label for="description">Sinopsis: </label>
                 <input type="text" name="description" id="description" required value="<?= $movie["description"]; ?>">
             </li>
             <li>

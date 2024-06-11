@@ -38,7 +38,7 @@ function displayMessage($type)
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halaman Admin</title>
+    <title>MyMovies</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
         .navbar-custom {
@@ -67,7 +67,7 @@ function displayMessage($type)
 
     <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container-fluid mx-3">
-            <a class="navbar-brand" href="#">Daftar Film Indonesia</a>
+            <a class="navbar-brand" href="movieindo.php">MyMovies</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -80,7 +80,7 @@ function displayMessage($type)
                         <ul class="dropdown-menu dropdown-menu-end">
                             <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#profileModal">Profile</a></li>
                             <?php if ($_SESSION['role'] === 'admin') : ?>
-                                <li><a class="dropdown-item" href="tambahm.php">Tambah Film</a></li>
+                                <li><a class="dropdown-item" href="tambahm.php">Tambah Film/Anime</a></li>
                             <?php endif; ?>
                             <li>
                                 <hr class="dropdown-divider">
@@ -94,7 +94,7 @@ function displayMessage($type)
     </nav>
 
     <div class="container">
-        <h1 class="mt-3">Daftar Film Indonesia</h1>
+        <h1 class="mt-3">Daftar Film dan Anime</h1>
 
         <!-- Display success or error messages -->
         <?php displayMessage('success'); ?>
@@ -102,7 +102,7 @@ function displayMessage($type)
 
         <form action="" method="post" class="mb-3 col-5">
             <div class="input-group">
-                <input type="text" name="keyword" class="form-control" autofocus placeholder="Masukkan keyword pencarian..." autocomplete="off" id="keyword">
+                <input type="text" name="keyword" class="form-control" autofocus placeholder="Search Film dan Anime...." autocomplete="off" id="keyword">
                 <button type="submit" name="cari" class="btn btn-primary" id="tombol-cari">Cari!</button>
 
                 <img src="img/loading.gif" class="load">
@@ -122,7 +122,7 @@ function displayMessage($type)
                         <th scope="col">Tahun Rilis</th>
                         <th scope="col">Genre</th>
                         <th scope="col">Sutradara</th>
-                        <th scope="col">Deskripsi</th>
+                        <th scope="col">Sinopsis</th>
                         <th scope="col">Durasi</th>
                         <th scope="col">Rating</th>
                     </tr>

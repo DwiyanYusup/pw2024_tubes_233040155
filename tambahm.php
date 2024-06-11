@@ -38,11 +38,11 @@ if (isset($_POST["submit"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah Film</title>
+    <title>Tambah Film/Anime</title>
 </head>
 
 <body>
-    <h1>Tambah Film</h1>
+    <h1>Tambah Film/Anime</h1>
 
     <form action="" method="post" enctype="multipart/form-data">
         <ul>
@@ -67,7 +67,7 @@ if (isset($_POST["submit"])) {
                 <input type="text" name="director" id="director" required>
             </li>
             <li>
-                <label for="description">Deskripsi: </label>
+                <label for="description">Sinopsis: </label>
                 <input type="text" name="description" id="description" required>
             </li>
             <li>
